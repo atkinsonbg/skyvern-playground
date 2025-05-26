@@ -22,6 +22,7 @@ services:
       - OLLAMA_NUM_THREAD=4
       - OLLAMA_CONTEXT_LENGTH=4096
       - OLLAMA_BATCH_SIZE=512
+      - OLLAMA_DEBUG=1
     entrypoint: >
       /bin/sh -c "
       ollama serve &
