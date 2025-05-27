@@ -1,9 +1,7 @@
 # skyvern-playground
 
 ```
-Navigate to https://www.caresource.com/.
-
-Find and go to the "Board of Directors" page under "About Us" in the site’s navigation.
+Navigate to https://www.caresource.com/about-us/caresource-board-of-directors/.
 
 Once on the Board of Directors page:
 - Validate that there are exactly 10 board members listed on the page.
