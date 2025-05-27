@@ -95,3 +95,17 @@ Once on the Board of Directors page:
 
 Report the results of both validations, including any errors if the count is incorrect or if Linda Willett is not found.
 ```
+
+```
+Navigate to https://finder.porsche.com/us/en-US/search/911?model=911
+
+Once on this page, you will be presented with a modal dialog asking for a Zip code, enter "23236", and select the first result in the drop down that appears.
+
+Click the button to Show the results.
+
+On the following page, ensure that:
+- All the cars displayed are model 911
+- There is at least one car shown on the page
+
+Report the results of both validations.
+```
