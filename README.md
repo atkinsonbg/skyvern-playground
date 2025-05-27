@@ -8,6 +8,11 @@ This repository demonstrates the integration of Skyvern, an AI-powered web autom
 
 The configuration is optimized for CPU-only operation with reduced resource usage and disabled CSS parsing for better performance. This setup is ideal for testing and development of web automation workflows using local LLM capabilities.
 
+## How To Run
+This Compose Stack requires a little care and feeding to get started:
+1. Perform a `make start` to start the stack. If this is the first time running the stack, you need to give the Ollama container time to download the model before running any queries in Skyern.
+2. Once the Postgres container is ready to accept connections and **after** the Skyvern container is ready (this creates all the DB tables), you need to run the `init-db.sh`. This will populate the DB with an organization and API key for use when running tasks from the UI.
+
 ## Docker Compose Settings
 
 ### Dozzle Container
