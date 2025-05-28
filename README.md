@@ -9,7 +9,9 @@ This repository demonstrates the integration of Skyvern, an AI-powered web autom
 The configuration is optimized for CPU-only operation with reduced resource usage and disabled CSS parsing for better performance. This setup is ideal for testing and development of web automation workflows using local LLM capabilities.
 
 ## Environment Variables
-https://github.com/Skyvern-AI/skyvern/blob/31d6dbdacd78a0981824043c1804ebea42f6ccfb/skyvern/config.py#L114
+https://github.com/Skyvern-AI/skyvern/blob/31d6dbdacd78a0981824043c1804ebea42f6ccfb/skyvern/config.py
+https://github.com/Skyvern-AI/skyvern/blob/7875e088cca2a819ed91d14b58dc8fd1e08b244a/skyvern/config.py
+https://github.com/ollama/ollama/blob/9239a254e054d24b0de3358ba8c4bd9b50730bfd/cmd/cmd.go
 
 ## How To Run
 This Compose Stack requires a little care and feeding to get started:
