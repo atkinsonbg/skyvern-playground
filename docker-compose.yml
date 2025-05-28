@@ -17,22 +17,19 @@ services:
     environment:
       - OLLAMA_HOST=0.0.0.0
       - OLLAMA_ORIGINS=*
-      - OLLAMA_TIMEOUT=900s
       - OLLAMA_KEEP_ALIVE=15m
-      - OLLAMA_NUM_THREAD=2
-      - OLLAMA_CONTEXT_LENGTH=2048
-      - OLLAMA_BATCH_SIZE=256
+      - OLLAMA_CONTEXT_LENGTH=4096
+      - OLLAMA_LOAD_TIMEOUT=900s
       - OLLAMA_DEBUG=1
-      - OLLAMA_GPU_LAYERS=0
     deploy:
       resources:
         limits:
-          memory: 6G
+          memory: 8G
     entrypoint: >
       /bin/sh -c "
       ollama serve &
       sleep 5 &&
-      ollama pull tinyllama &&
+      ollama pull qwen2.5:7b-instruct &&
       wait
       "
 
@@ -57,7 +54,7 @@ services:
 
   skyvern:
     container_name: skyvern
-    image: public.ecr.aws/skyvern/skyvern:latest
+    image: public.ecr.aws/skyvern/skyvern:v0.1.84
     restart: on-failure
     ports:
       - 8000:8000
@@ -69,20 +66,19 @@ services:
       - ./.log:/data/log
       - ./.streamlit:/app/.streamlit
     environment:
+      - LLM_CONFIG_TIMEOUT=600
       - DATABASE_STRING=postgresql+psycopg://skyvern:skyvern@postgres:5432/skyvern
       - BROWSER_TYPE=chromium-headful
       - ENABLE_CODE_BLOCK=true
       - API_HOST=0.0.0.0
       - API_PORT=8000
       - LOG_LEVEL=debug
-      - ENABLE_CSS_SHAPE_CONVERT=false
+      - LITELLM_REQUEST_TIMEOUT=600s
       # Ollama Support:
       - LLM_KEY=OLLAMA
       - ENABLE_OLLAMA=true
-      - OLLAMA_MODEL=tinyllama
+      - OLLAMA_MODEL=qwen2.5:7b-instruct
       - OLLAMA_SERVER_URL=http://ollama:11434
-      - OLLAMA_FORMAT=json
-      - OLLAMA_TEMPERATURE=0.1
     depends_on:
       postgres:
         condition: service_healthy

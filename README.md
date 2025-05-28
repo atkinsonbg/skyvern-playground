@@ -8,6 +8,9 @@ This repository demonstrates the integration of Skyvern, an AI-powered web autom
 
 The configuration is optimized for CPU-only operation with reduced resource usage and disabled CSS parsing for better performance. This setup is ideal for testing and development of web automation workflows using local LLM capabilities.
 
+## Environment Variables
+https://github.com/Skyvern-AI/skyvern/blob/31d6dbdacd78a0981824043c1804ebea42f6ccfb/skyvern/config.py#L114
+
 ## How To Run
 This Compose Stack requires a little care and feeding to get started:
 1. Perform a `make start` to start the stack. If this is the first time running the stack, you need to give the Ollama container time to download the model before running any queries in Skyern.
@@ -108,4 +111,11 @@ On the following page, ensure that:
 - There is at least one car shown on the page
 
 Report the results of both validations.
+```
+
+```
+Title: Query 911s For Sale in 23236
+
+Go to https://finder.porsche.com/us/en-US/search/911?model=911&position=23236%2C37.4583146%2C-77.57340479999999%2C50. Close any cookie dialogs youn encounter. Your task is COMPLETE when you have performed this search and reported back the total number of 911s that are available for sale in this zipcode.
+
 ```
